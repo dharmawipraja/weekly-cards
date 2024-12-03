@@ -49,7 +49,7 @@ const CardComponent: React.FC<Props> = ({ id, date, imageUri, linkText, title, d
   return (
     shouldShowCard && (
       <Box className="w-[280px] md:w-[400px]">
-        <Card asChild onClick={handleClick} className={cn(selected ? 'border border-red-700' : '')}>
+        <Card asChild className={cn(selected ? 'border border-red-700' : '')}>
           <div>
             <div className="flex justify-center">
               <img src={imageUri} alt={title} />
@@ -73,6 +73,7 @@ const CardComponent: React.FC<Props> = ({ id, date, imageUri, linkText, title, d
                   'rounded-full p-1 items-center justify-center',
                   selected ? 'bg-green-700' : 'bg-gray-300'
                 )}
+                onClick={handleClick}
               >
                 {selected ? <CheckIcon color="white" /> : <PlusIcon color="black" />}
               </div>
