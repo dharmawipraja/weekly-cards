@@ -12,6 +12,7 @@ type Props = {
   title: string;
   description: string;
   gender: string;
+  filter: string;
 };
 
 const CardComponent: React.FC<Props> = ({
@@ -22,8 +23,10 @@ const CardComponent: React.FC<Props> = ({
   title,
   description,
   gender,
+  filter
 }) => {
   const [selected, setSelected] = useState(false);
+  const shouldShowCard = !filter || filter === gender.toLowerCase();
 
   useEffect(() => {
     const result = getItem(date)
@@ -53,7 +56,7 @@ const CardComponent: React.FC<Props> = ({
   }, [])
 
   return (
-    <Box className="w-[280px] md:w-[400px]">
+    shouldShowCard && <Box className="w-[280px] md:w-[400px]">
       <Card asChild onClick={handleClick}>
         <div>
           <div className="flex justify-center">
