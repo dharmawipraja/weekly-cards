@@ -1,1 +1,1 @@
-export const GENDER = ['male', 'female', 'unknown']
+export const GENDER = ['male', 'female', 'unknown'];

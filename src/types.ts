@@ -4,7 +4,7 @@ export type Card = {
   species: string;
   name: string;
   origin: {
-    name: string
+    name: string;
   };
   gender: string;
 };
