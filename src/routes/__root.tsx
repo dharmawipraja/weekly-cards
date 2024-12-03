@@ -10,7 +10,7 @@ import { GENDER } from '../constants';
 
 export const Route = createRootRoute({
   loader: async () => {
-    const res = await fetch('https://rickandmortyapi.com/api/character');
+    const res = await fetch(import.meta.env.VITE_API_URL);
     const { results } = await res.json();
     const cardData = results.slice(0, 14); // Only take 14 elements because we need 2 card per day in one week
 
